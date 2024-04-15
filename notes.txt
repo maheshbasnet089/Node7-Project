@@ -1,0 +1,9 @@
+step 1 : npm init hanney hae / yeti yo hanna alchi layo vaney 
+npm init -y handa vayo 
+step 2 : app.js banauney 
+
+express : 4.19.2 (Major.Minor.Patch) -> semantic version (semver)
+
+3000 - portnumber
+node --watch app.js
+package.json ---> project describe garney file
