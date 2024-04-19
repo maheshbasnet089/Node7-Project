@@ -9,17 +9,19 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
+        background-color: #f0f0f0;
     }
     .navbar {
         background-color: #333;
         color: #fff;
-        padding: 15px;
+        padding: 15px 0;
         text-align: center;
     }
     .navbar a {
         color: #fff;
         text-decoration: none;
         margin: 0 15px;
+        font-size: 18px;
     }
     .container {
         max-width: 1200px;
@@ -31,20 +33,30 @@
     }
     .card {
         width: 300px;
-        background-color: #f4f4f4;
-        border-radius: 5px;
+        background-color: #fff;
+        border-radius: 10px;
         padding: 20px;
         margin-bottom: 20px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+    }
+    .card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
     }
     .footer {
         background-color: #333;
         color: #fff;
-        padding: 15px;
+        padding: 15px 0;
         text-align: center;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
+    }
+    .footer p {
+        margin: 0;
+        font-size: 14px;
     }
 </style>
 </head>
@@ -59,16 +71,20 @@
 
 <div class="container">
     <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image">
         <h2>Card 1</h2>
-        <p>This is a simple card with some content.</p>
+        <p>This is a simple card with some content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <a href="/blog">Read More</a>
     </div>
     <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image">
         <h2>Card 2</h2>
-        <p>This is another card with different content.</p>
+        <p>This is another card with different content. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
     </div>
     <div class="card">
+        <img src="https://via.placeholder.com/300" alt="Placeholder Image">
         <h2>Card 3</h2>
-        <p>Yet another card with its own content.</p>
+        <p>Yet another card with its own content. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
 </div>
 

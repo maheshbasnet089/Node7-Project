@@ -14,11 +14,11 @@ app.get("/blog",(req,res)=>{
 })
 
 app.get("/blog/create",(req,res)=>{
-    res.send("Soon, here will be the create form")
+    res.render("createblog")
 })
 
 app.get("/blog/edit",(req,res)=>{
-    res.send("Soon, here will be the edit form")
+    res.render('editblog')
 })
 
 
