@@ -1,9 +1,13 @@
 // const app = require("express")()
 const express = require('express')
+const { blogs } = require('./model/index')
 const app = express()
 
 require("./model/index")
 app.set('view engine','ejs')
+
+app.use(express.json())
+app.use(express.urlencoded({extended : true}))
 
 app.get('/',(req,res)=>{
     const data = {name : "Manish",age:22}
@@ -20,6 +24,20 @@ app.get("/blog/create",(req,res)=>{
 
 app.get("/blog/edit",(req,res)=>{
     res.render('editblog')
+})
+
+
+app.post('/blog',async (req,res)=>{
+    // const title = req.body.title 
+    // const subtitle = req.body.subtitle 
+    // const description = req.body.description 
+    const {title,subtitle,description} = req.body 
+    await blogs.create({
+        title  : title,
+        subTitle : subtitle,
+        description : description
+    })
+    res.redirect("/")
 })
 
 
