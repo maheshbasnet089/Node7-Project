@@ -80,7 +80,7 @@
 
 <div class="container">
     <h2>Create Blog Post</h2>
-    <form action="/blog" method="post" >
+    <form action="/blog" method="post" enctype="multipart/form-data" >
         <div class="form-group">
             <label for="title">Title:</label>
             <input type="text" id="title" name="title" required>
@@ -95,7 +95,7 @@
         </div>
         <div class="form-group">
             <label for="image">Upload Image:</label>
-            <input type="file" id="image" name="image" accept="image/*">
+            <input type="file" id="image" name="image" accept="image/*" required>
         </div>
         <input type="submit" value="Submit">
     </form>

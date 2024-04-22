@@ -6,6 +6,9 @@ const app = express()
 require("./model/index")
 app.set('view engine','ejs')
 
+const {multer,storage}  = require('./middleware/multerConfig')
+const upload = multer({storage : storage})
+
 app.use(express.json())
 app.use(express.urlencoded({extended : true}))
 
@@ -27,15 +30,17 @@ app.get("/blog/edit",(req,res)=>{
 })
 
 
-app.post('/blog',async (req,res)=>{
+app.post('/blog',upload.single('image'), async (req,res)=>{
     // const title = req.body.title 
     // const subtitle = req.body.subtitle 
     // const description = req.body.description 
+ 
     const {title,subtitle,description} = req.body 
     await blogs.create({
         title  : title,
         subTitle : subtitle,
-        description : description
+        description : description,
+        imageUrl : req.file.filename
     })
     res.redirect("/")
 })
